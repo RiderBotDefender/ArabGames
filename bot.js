@@ -317,4 +317,3 @@ client.on("message", (message) => {
  
  
  
-client.login(process.env.SECRET);// سيب دي كما هي لكي لا يخرب عليك البوت
