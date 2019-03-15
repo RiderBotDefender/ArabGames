@@ -310,4 +310,4 @@ client.on("message", (message) => {
  
  
  
-client.login(BOT_TOKEN);
+client.login(NTUzODY0MTcxOTYwMTM5Nzc2.D202JQ.JdDdLRZUYXRCferDzue5rjcnV7g);
