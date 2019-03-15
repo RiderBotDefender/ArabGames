@@ -11,8 +11,8 @@ client.on('ready', () => {
       console.log(`ON ${client.guilds.size} Servers '     Script By : EX Clan ' `);
     console.log(`----------------`);
   console.log(`Logged in as ${client.user.tag}!`);
-client.user.setGame(`%bc |By Texo`,"http://twitch.tv/Death Shop")
-client.user.setStatus("dnd")
+client.user.setGame(`%help | %inv`,"http://twitch.tv/Death Shop")
+client.user.setStatus("online")
 });
  
  
@@ -40,7 +40,7 @@ client.on('guildMemberRemove', member => {
     .setDescription(`الى اللقاء...`)
     .addField('👤   تبقي',`**[ ${member.guild.memberCount} ]**`,true)
     .setColor('RED')
-    .setFooter(`ArabGames Bot`, '')
+    .setFooter('ArabGames Bot' , 'https://cdn.discordapp.com/icons/390551815072251904/418fa2788d8115808951c9881ba8f190.jpg')
  
 var channel =member.guild.channels.find('name', 'welcome') //دا اسم روم الولكم
 if (!channel) return;
@@ -48,30 +48,22 @@ channel.send({embed : embed});
 });
  
  
-client.on('message', msg => {
-  if (msg.author.bot) return;
-  if (!msg.content.startsWith(prefix)) return;
-  let command = msg.content.split(" ")[0];
-  command = command.slice(prefix.length);
-  let args = msg.content.split(" ").slice(1);
- 
-    if(command === "%clear") {
-        const emoji = client.emojis.find("name", "wastebasket")
-    let textxt = args.slice(0).join("");
-    if(msg.member.hasPermission("MANAGE_MESSAGES")) {
-    if (textxt == "") {
-        msg.delete().then
-    msg.channel.send("***```ضع عدد الرسائل التي تريد مسحها 👌```***").then(m => m.delete(3000));
-} else {
-    msg.delete().then
-    msg.delete().then
-    msg.channel.bulkDelete(textxt);
-        msg.channel.send("```php\nعدد الرسائل التي تم مسحها: " + textxt + "\n```").then(m => m.delete(3000));
-        }    
-    }
-}
-});
- 
+client.on('message', message => {  //RayGamerMC ChatClear Code
+    var prefix = "%"; //البريفكس الي تبيه
+    if (message.author.bot) return;
+if (message.content.startsWith(prefix + 'clear')) {
+    if(!message.channel.guild) return message.reply('هذا الأمر شغال في السيرفرات فقط');
+        if(!message.member.hasPermission('MANAGE_MESSAGES')) return message.channel.send('⛔ | ! انت لا تحمل خاصية **MANAGE_MESSAGES**');
+        if(!message.guild.member(client.user).hasPermission('MANAGE_MESSAGES')) return message.channel.send('⛔ |! البوت لا يحمل خاصية **MANAGE_MESSAGES**');
+ let args = message.content.split(" ").slice(1)
+    let messagecount = parseInt(args); //Snow Codes RayGamerMC
+    if (args > 99) return message.reply("**🛑 || يجب ان يكون عدد المسح أقل من 100 .**").then(messages => messages.delete(5000))
+    if(!messagecount) args = '100'; //Snow Codes
+    message.channel.fetchMessages({limit: messagecount + 1}).then(messages => message.channel.bulkDelete(messages));
+    message.channel.send(`\`${args}\` : __عدد الرسائل التي تم مسحها __ `).then(messages => messages.delete(5000));
+  }
+  });  //كود مسح الشات
+
 var requestHelp = async function(type, user, message) {
     switch(type) {
         case "games":
