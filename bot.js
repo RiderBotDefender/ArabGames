@@ -4,7 +4,7 @@ const prefix = "%";
  
 client.on('ready', () => {
    console.log(`----------------`);
-      console.log(`Desert Bot- Script By : EX Clan`);
+      console.log(`KillerPalesTine`);
         console.log(`----------------`);
       console.log(`ON ${client.guilds.size} Servers '     Script By : EX Clan ' `);
     console.log(`----------------`);
