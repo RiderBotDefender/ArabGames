@@ -22,7 +22,7 @@ client.on('guildMemberAdd', member => {
     .setDescription(`اهلا بك في السيرفر`)
     .addField(' 👤  انت رقم',`**[ ${member.guild.memberCount} ]**`,true)
     .setColor('GREEN')
-    .setFooter('The King Bot', 'https://cdn.discordapp.com/icons/390551815072251904/418fa2788d8115808951c9881ba8f190.jpg')
+    .setFooter('ArabGames Bot', 'https://cdn.discordapp.com/icons/390551815072251904/418fa2788d8115808951c9881ba8f190.jpg')
  
 var channel =member.guild.channels.find('name', 'welcome') //دا اسم روم الولكم
 if (!channel) return;
@@ -38,9 +38,9 @@ client.on('guildMemberRemove', member => {
     .setDescription(`الى اللقاء...`)
     .addField('👤   تبقي',`**[ ${member.guild.memberCount} ]**`,true)
     .setColor('RED')
-    .setFooter(`The King Bot`, '')
+    .setFooter(`ArabGames Bot`, '')
  
-var channel =member.guild.channels.find('name', 'wlc') //دا اسم روم الولكم
+var channel =member.guild.channels.find('name', 'welcome') //دا اسم روم الولكم
 if (!channel) return;
 channel.send({embed : embed});
 });
