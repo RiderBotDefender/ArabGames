@@ -76,7 +76,6 @@ client.on('message', msg => {
  
  
  
-var prefix = "%" ;   // البرفكس هنا
  
 var requestHelp = async function(type, user, message) {
     switch(type) {
