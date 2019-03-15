@@ -6,13 +6,13 @@ const prefix = "%";
  
 client.on('ready', () => {
    console.log(`----------------`);
-      console.log(`Arab Games Bot`);
+      console.log(`Desert Bot- Script By : EX Clan`);
         console.log(`----------------`);
       console.log(`ON ${client.guilds.size} Servers '     Script By : EX Clan ' `);
     console.log(`----------------`);
   console.log(`Logged in as ${client.user.tag}!`);
-client.user.setGame(`%bc `,"http://twitch.tv/Death Shop")
-client.user.setStatus("online")
+client.user.setGame(`%bc |By Texo`,"http://twitch.tv/Death Shop")
+client.user.setStatus("dnd")
 });
  
  
@@ -76,6 +76,7 @@ client.on('message', msg => {
  
  
  
+var prefix = "%" ;   // البرفكس هنا
  
 var requestHelp = async function(type, user, message) {
     switch(type) {
@@ -317,3 +318,4 @@ client.on("message", (message) => {
  
  
  
+client.login(process.env.SECRET);// سيب دي كما هي لكي لا يخرب عليك البوت
