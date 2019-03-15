@@ -312,4 +312,3 @@ client.on("message", (message) => {
  
  
  
-client.login(NTUzODY0MTcxOTYwMTM5Nzc2.D2zkCg.CZHv_WrmQTtnYaiLzzfVy6LicWk);// سيب دي كما هي لكي لا يخرب عليك البوت
